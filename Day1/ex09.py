@@ -6,6 +6,9 @@ def main():
     lst.append(dict(name='Vinod', email='vinod@vinod.co', city='Bangalore', married=True))
     lst.append(dict(name='Shyam', email='shyam@example.com', phones=['9876612893', '9282622123']))
 
+    vinay_phones = {'928272622', '287273636'}  # set is not json serializable; convert it to list or tuple
+    lst.append(dict(name='Vinay', emails=('vinay@xmpl.com', ), phones=list(vinay_phones)))
+
     # print(lst)
     # strLst = json.dumps(lst)
     # print(strLst)
@@ -15,7 +18,7 @@ def main():
     print('Data in JSON format written to file people.json')
 
 
-def main():
+def main_():
     with open('iron-man-movies.json') as f:
         data = json.load(f)
         print(f'Total result = {data["totalResults"]}')
