@@ -1,0 +1,16 @@
+[
+   {
+      "name": "Vinod",
+      "email": "vinod@vinod.co",
+      "city": "Bangalore",
+      "married": true
+   },
+   {
+      "name": "Shyam",
+      "email": "shyam@example.com",
+      "phones": [
+         "9876612893",
+         "9282622123"
+      ]
+   }
+]
