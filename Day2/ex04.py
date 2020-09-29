@@ -1,3 +1,5 @@
+from ex01 import border
+
 def validate_params(*types):
     # this function is not a decorator
     # return value of this function (which should be a function) is the decorator
