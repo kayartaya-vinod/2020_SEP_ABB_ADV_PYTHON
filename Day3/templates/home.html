@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data['title'] }}</title>
+    <link type="text/css" rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+</head>
+<body>
+    <div class="alert alert-primary">
+        <div class="container">
+            <h1>{{ data['title'] }}</h1>
+        </div>
+    </div>
+
+    <div class="container" style="min-height: 500px; ">
+
+        <div>
+            <a href="/" class="btn btn-link">Home</a> |
+            <a href="/new-product" class="btn btn-link">New product</a>
+        </div>
+
+        {% block mainContent %}
+        <h3>You are home!!!</h3>
+        {% endblock %}
+    </div>
+
+    <div class="text-center">
+        <h5>&copy; 2020 - All rights reserved by <a href="https://vinod.co">Learn with Vinod</a></h5>
+    </div>
+</body>
+</html>

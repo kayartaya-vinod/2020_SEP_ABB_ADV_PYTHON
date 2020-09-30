@@ -1,0 +1,38 @@
+{% extends 'home.html' %}
+
+{% block mainContent %}
+
+<div class="row">
+
+    <div class="col">
+        <h3>{{ data['pageTitle'] }}</h3>
+
+        <form method="POST">
+            <div>
+                <label for="id">ID: </label>
+                <input class="form-control" autofocus name="id" id="id">
+            </div>
+            <div>
+                <label for="name">Product name: </label>
+                <input class="form-control" name="name" id="name">
+            </div>
+            <div>
+                <label for="price">Price: </label>
+                <input class="form-control" name="price" id="price">
+            </div>
+            <br>
+            <button class="btn btn-primary">Save details</button>
+        </form>
+
+        {% if 'feedback' in data %}
+        <br>
+        <h3 class="alert alert-success">{{ data['feedback'] }}</h3>
+        {% endif %}
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+</div>
+
+
+
+{% endblock %}

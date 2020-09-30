@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+
+{% block mainContent %}
+<h3>{{ data['pageTitle'] }}</h3>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Product name</th>
+        <th class="text-right">Unit price</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for p in data['products'] %}
+    <tr>
+        <td>{{ p['id'] }}</td>
+        <td>{{ p.get('name') }}</td>
+        <td class="text-right">₹ {{ p['price'] }}</td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}
