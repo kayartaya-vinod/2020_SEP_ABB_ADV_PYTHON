@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact List</title>
+    <link type="text/css" rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>Contact list</h1>
+    <hr>
+    <h3>Here is the list:</h3>
+    <ul class="list-group" style="width: 300px; " id="contacts">
+    </ul>
+</div>
+
+<script type="text/javascript">
+    // make an XHR call
+    var xhr = new XMLHttpRequest(); // xhr.readyState = 0
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200) {
+        var data = JSON.parse(xhr.responseText)
+        for(var i in data){
+            // console.log(data[i].name);
+            var ul = document.getElementById('contacts')
+            ul.innerHTML += '<li class="list-group-item">' + data[i].name + '</li>';
+        }
+        }
+    }
+
+    xhr.open('GET', 'http://localhost:8080/api/contacts'); // xhr.readyState = 1
+    xhr.send(); // xhr.readyState=2
+
+
+</script>
+
+</body>
+</html>
